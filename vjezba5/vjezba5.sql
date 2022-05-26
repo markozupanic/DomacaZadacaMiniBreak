@@ -82,3 +82,45 @@ create table cura(
 );
 
 alter table svekarcura add foreign key (cura) references cura(sifra);
+
+insert into mladic (sifra,kratkamajica,haljina) values
+(null,'plava','zelena'),
+(null,'crna','roza'),
+(null,'bijela','plava');
+
+insert into svekar(sifra,carape,eura) values
+(null,'sportske',15.6),
+(null,'zimske',1.6),
+(null,'bijele',12.2);
+
+insert into cura (sifra,carape,maraka) values
+(null,'bijele',2.5),
+(null,'crne',0.5),
+(null,'roze',15.9);
+
+insert into svekarcura(sifra,svekar,cura) values
+(null,1,1),
+(null,2,2),
+(null,3,3);
+
+insert into punac (sifra,prviput,svekar) values
+(null,2022-06-26,1),
+(null,2021-06-26,2),
+(null,2002-06-26,3);
+
+insert into punica(sifra,hlace,nausnica,vesta,modelnaocala,treciputa,punac)
+values (null,'plave',3,'dugacka','suncane',2022-06-06,1),
+(null,'bijele',3,'kratka','dioptrijske',2022-03-06,2),
+(null,'roze',3,'dugacka','suncane',2022-07-06,3);
+
+insert into ostavljena (sifra,ogrlica,punica) values
+(null,17,1),
+(null,5,2),
+(null,45,3);
+
+update mladic set haljina='Osijek';
+
+delete from ostavljena where ogrlica=17;
+
+select majica from punac where prviput=null;
+
