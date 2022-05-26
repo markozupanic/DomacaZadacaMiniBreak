@@ -84,3 +84,48 @@ create table punica(
 );
 
 alter table punica add foreign key (cura) references cura(sifra);
+
+
+insert into mladic(sifra,lipa,narukvica,drugiputa) values
+(null,14.5,45,2020-15-05),
+(null,19.5,45,2021-09-05),
+(null,1.8,45,2002-5-05);
+
+insert into zarucnik(sifra,asocijalno,narukvica,novcica) values
+(null,null,18,15.8),
+(null,null,48,5.8),
+(null,null,5,195.8);
+
+insert into zarucnikmladic(sifra,zarucnik,mladic) values
+(null,1,1),(null,2,3),(null,3,2);
+
+insert into ostavljen(sifra,introvertno,kratkamajica,prsten) values
+(null,null,'plava',18),
+(null,null,'crna',5),
+(null,null,'roza',56);
+
+insert into prijateljica(sifra,gustoca) values
+(null,18.6),(null,48.9),(null,5.9);
+
+insert into sestra(sifra,bojakose,hlace,stilfrizura,maraka) values
+(null,'plava','a','kratka',15.6),
+(null,'crna','roza','duga',1.3),
+(null,'bijela','crvena','kratka',78.2);
+
+insert into cura(sifra,lipa) values
+(null,48.6),
+(null,15.6),
+(null,5.3);
+
+insert into punica(sifra,eura,cura) values
+(null,45.6,1),
+(null,1.6,2),
+(null,14.3,3);
+
+update punica set  eura=15.77;
+
+
+delete from sestra where hlace<'ab';
+
+select kratkamajica from ostavljen where introvertno=null;
+
