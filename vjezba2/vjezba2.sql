@@ -82,3 +82,51 @@ alter table cura add foreign key (decko) references decko(sifra);
 alter table neprijatelj add foreign key (cura) references cura(sifra);
 
 alter table brat add foreign key (neprijatelj) references neprijatelj(sifra);
+
+insert into neprijatelj(sifra,haljina,modelnaocala,kuna) values
+(null,'zuta' ,'suncane' ,15.6),
+(null,'plava' ,'dioptrijske' ,15.6),
+(null,'roza ','suncane' ,15.6),
+(null,'zelena' ,'dioptrijske' ,15.6);
+
+insert into cura(sifra,haljina,drugiput,majica) values
+(null,'zelena' ,2022-05-12,'kratka'),
+(null,'plava' ,2022-04-09,'kratka'),
+(null,'crna' ,2019-01-01,'kratka'),
+(null,'plava' ,2020-07-09,'kratka');
+
+insert into decko(sifra,asocijalno) values
+(null,null),
+(null,null),
+(null,null),
+(null,null);
+
+insert into zarucnica(sifra,bojakose,lipa,indiferentno) values
+(null,'plava',15.8,null),
+(null,'smeda',10.5,null),
+(null,'crna',1.8,null),
+(null,'crvena',5.9,null);
+
+insert into deckozarucnica(sifra,decko,zarucnica) values
+(null,1,1),
+(null,2,3),
+(null,4,2),
+(null,3,4);
+ 
+insert into svekar(sifra,ogrlica,asocijalno) values
+(null,1,null),
+(null,2,null),
+(null,3,null);
+
+
+insert into prijatelj(sifra,treciput,ekstroventno,svekar) values
+(null,2022-10-15,null,1),
+(null,2021-10-15,null,2),
+(null,2020-10-15,null,3);
+
+update prijatelj set treciput=2020-04-30;
+
+#select * from cura where suknja=drugiput;
+
+
+

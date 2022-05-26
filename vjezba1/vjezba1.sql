@@ -1,4 +1,4 @@
-#mysql -uroot < C:\Users\X\Documents\GitHub\DomacaZadacaMiniBreak\vjezba1.sql
+#mysql -uroot < C:\Users\X\Documents\GitHub\DomacaZadacaMiniBreak\vjezba1\vjezba1.sql
 
 drop database if exists vjezba1;
 create database vjezba1;
@@ -31,7 +31,7 @@ create table sestra(
     haljina varchar(31) not null,
     maraka decimal(16,6),
     hlace varchar(46)not null,
-    narukvca int not null
+    narukvica int not null
 );
 
 create table zena(
@@ -60,7 +60,7 @@ create table mladic(
     kuna decimal(16,8) not null,
     drugiput datetime,
     asocijalno bit,
-    ekstrevetno bit not null,
+    ekstroventno bit not null,
     dukserica varchar(48) not null,
     muskarac int 
 );
@@ -89,3 +89,56 @@ alter table zena add foreign key (sestra) references sestra(sifra);
 alter table muskarac add foreign key (zena) references zena(sifra);
 
 alter table mladic add foreign key (muskarac) references muskarac(sifra);
+
+
+insert into sestra (sifra,haljina,hlace,narukvica) values
+(null,'zelena' ,'kratke', 3),
+(null,'plava' ,'duge', 1),
+(null,'žuta' ,'široke', 4);
+
+insert into zena (sifra,kratkamajica,jmbag,bojaociju,sestra,hlace) values
+(null,'zelena' , 1234567891 ,'plava',1,'lijepe'),
+(null,'zuta' , 1234561891 ,'smeđa',2,'narančaste'),
+(null,'crvena' , 1204567891 ,'zelena',3,'roze');
+
+
+
+insert into muskarac(sifra,bojaociju,maraka,zena) values
+(null,'Plava' ,14.5,1),
+(null,'Smedja' ,4,2),
+(null,'zelena' ,9.4,3);
+
+insert into svekar(sifra,bojaociju) values
+(null,'zelena'),
+(null, 'plava'),
+(null,'smeđa');
+
+
+insert into sestra_svekar(sifra,sestra,svekar) values
+(null,1,1),
+(null,1,3),
+(null,1,2);
+
+insert into cura(sifra,novcica,gustoca,ogrlica) values
+(null,11.2,1.4,1),
+(null,1.4,5.7,1),
+(null,1.2,13.4,1),
+(null,8.2,10.4,1),
+(null,18.2,14,1);
+
+
+update cura set gustoca=15.77;
+
+insert into mladic(sifra,suknja,kuna,ekstroventno,dukserica) values
+(null,'kratka',18.9,null,'plava'),
+(null,'duga',20.1,null,'crvena'),
+(null,'prozirna',5.9,null,'zuta'),
+(null,'poderana',89.1,null,'ljubicasta'),
+(null,'kratka',7.6,null,'zelena');
+
+delete from mladic where kuna>15.78;
+
+#select * from zena where hlace like '%a%n%a%';
+
+
+

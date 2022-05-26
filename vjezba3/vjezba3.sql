@@ -38,7 +38,7 @@ create table snasa(
 create table punica(
     sifra int not null primary key auto_increment,
     asocijlno bit,
-    kratkamajica varchar(44),
+    kratkamajica varchar(44) not null,
     kuna decimal(13,8) not null,
     vesta varchar(32)not null,
     snasa int
@@ -49,8 +49,8 @@ alter table punica add foreign key (snasa) references snasa(sifra);
 create table ostavljena(
     sifra int not null primary key auto_increment,
     kuna decimal(17,5),
-    lipa decimal(15,6),
-    majica varchar(36),
+    lipa decimal(15,6) not null,
+    majica varchar(36) not null,
     modelnaocala varchar(31) not null,
     prijatelj int
 );
@@ -83,3 +83,53 @@ create table brat(
 
 alter table prijateljbrat add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijateljbrat add foreign key (brat) references brat(sifra);
+
+insert into ostavljena(sifra,lipa,majica,modelnaocala) values
+(null,10.0,'kratka','zelena'),
+(null,20.0,'duga','crna'),
+(null,5.5,'duga','plava');
+
+insert into snasa(sifra,kuna,eura,ostavljena) values
+(null,15.6,14.6,1),
+(null,1.6,11.6,2),
+(null,9.4,2.4,3);
+
+insert into prijatelj (sifra,indiferentno) values
+(null,null),
+(null,null),
+(null,null);
+
+insert into brat (sifra,ogrlica,ekstroventno) values
+(null,1,null),
+(null, 2,null),
+(null, 3,null);
+
+insert into prijateljbrat(sifra,prijatelj,brat) values 
+(null,1,1),
+(null,3,2),
+(null,2,3);
+
+
+
+insert into cura (sifra,ogrlica) values
+(null,1),
+(null,2),
+(null,3);
+
+insert into svekar(sifra,novcic,suknja,narukvica,cura) values
+(null,15.9,'plava' ,1,1),
+(null,9.6,'roza' ,2,2),
+(null,1.5,'bijela' ,3,3);
+
+
+update svekar set suknja='Osijek';
+
+
+insert into punica (sifra,kratkamajica,kuna,vesta) values
+(null,'ab',15.6,'plava'),
+(null,'plava',1.6,'crna'),
+(null,'anarb',15.9,'zuta');
+
+delete from punica where kratkamajica like '%a%b%';
+
+#select * from ostavljena where not lipa(9,10,20,30,35);
