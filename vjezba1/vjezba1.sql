@@ -138,7 +138,22 @@ insert into mladic(sifra,suknja,kuna,ekstroventno,dukserica) values
 
 delete from mladic where kuna>15.78;
 
-#select * from zena where hlace like '%a%n%a%';
+#select kratkamajica from zena where hlace like '%a%n%a%';
+
+select a.dukserica,f.asocijalno,e.hlace 
+from svekar a
+inner join sestra_svekar b on b.svekar = a.sifra 
+inner join sestra c on c.sifra = b.sestra 
+inner join zena d on d.sestra = c.sifra 
+inner join muskarac e on e.zena =d.sifra 
+inner join mladic f on f.muskarac = e.sifra 
+where d.hlace like 'a%' and c.haljina like '%ba%'
+order by e.hlace desc;
+
+select a.haljina, a.maraka
+from sestra a
+left join sestra_svekar b on b.sestra=a.sifra
+where b.sifra is null;
 
 
 

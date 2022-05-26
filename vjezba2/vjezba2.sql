@@ -126,7 +126,7 @@ insert into prijatelj(sifra,treciput,ekstroventno,svekar) values
 
 update prijatelj set treciput=2020-04-30;
 
-#select * from cura where suknja=drugiput;
+#select suknja from cura where drugiput=null;
 
 
 
