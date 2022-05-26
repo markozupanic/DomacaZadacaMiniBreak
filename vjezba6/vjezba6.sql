@@ -85,3 +85,35 @@ create table zena(
 alter table decko add foreign key (zena) references zena(sifra);
 alter table zena add foreign key (brat) references brat(sifra);
 
+
+insert into prijatelj(sifra,prstena,stilfrizura) values
+(null,158,'kratka'),
+(null,14,'celava'),
+(null,48,'duga');
+
+insert into brat(sifra,nausnica,treciputa,narukvica) values
+(null,18,2022-11-18,2),
+(null,48,2021-11-18,418),
+(null,5,2002-11-18,48);
+
+insert into zena (sifra,novcica,narukvica,dukserica,brat) values
+(null,18.5,78,'plava',1),
+(null,1827.8,17,'crna',2),
+(null,1.8,4,'plava',3);
+
+insert into decko(sifra,zena) values
+(null,1),
+(null,2),
+(null,3);
+
+insert into svekrva (sifra,hlace,suknja,ogrlica,treciputa,dukserica,narukvica)
+values (null,'plave','zute' ,12,2022-05-06,'zelena',18),
+(null,'zute','plave' ,155,2002-05-06,'crna',48),
+(null,'proze','crne' ,1,2029-05-06,'bijela',10);
+
+
+update svekrva set suknja='Osijek';
+
+delete from decko where modelnaocala<'AB';
+
+select narukvica from brat where treciputa=null;
