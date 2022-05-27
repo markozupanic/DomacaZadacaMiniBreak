@@ -81,3 +81,39 @@ create table brat(
 
 alter table brat add foreign key (neprijatelj) references neprijatelj(sifra);
 
+
+insert into prijateljica(sifra,nausnica,introvertno) values
+(null,18,null),(null,789,null),(null,8,null);
+
+insert into cura(sifra,nausnica,ogrlica) values
+(null,78,26),(null,14,24),(null,7,6);
+
+insert into decko(sifra,treciputa,ogrlica,ekstroventno) values
+(null,2020-03-06,4,null),(null,2020-04-01,48,null),
+(null,2022-04-06,78,null);
+
+insert into muskarac(sifra,drugiputa) values
+(null,2022-04-06),(null,2020-04-06),(null,2015-04-06);
+
+insert into muskaracdecko(sifra,muskarac,decko) values
+(null,1,2),(null,3,1),(null,2,3);
+
+insert into becar(sifra,eura,muskarac) values
+(null,15.6,1),(null,1.9,2),(null,78.9,3);
+
+insert into neprijatelj(sifra,ogrlica,becar) values
+(null,45,1),(null,9,3),(null,18,2);
+
+insert into brat(sifra,novcica) values
+(null,59.3),(null,6.5),(null,14.9);
+
+insert into prijateljica(sifra,nausnica,introvertno) values
+(null,45,null),(null,21,null),(null,7,null);
+
+insert into cura(sifra,nausnica,ogrlica) values
+(null,4,47),(null,19,14),(null,78,3);
+
+update cura set indiferentno='false';
+
+delete from brat where not novcica=12.75;
+
