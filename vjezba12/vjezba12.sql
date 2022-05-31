@@ -87,6 +87,40 @@ alter table djevojka add foreign key (svekrva) references svekrva(sifra);
 
 alter table prijatelj add foreign key (djevojka) references djevojka(sifra);
 
+insert into zena(sifra,eura) values
+(null,15.6),(null,5.6),(null,29.8);
+
+insert into decko(sifra,stilfrizura,indiferentno,zena) values
+(null,'kratka',null,1),(null,'celava',null,2),(null,'duga',null,3);
+
+insert into sestra(sifra,kratkamajica) values
+(null,'crna'),(null,'zelen'),(null,'plava');
+
+insert into zarucnica(sifra,hlace,kratkamajica) values
+(null,'plava','zelena'),(null,'zuta','crvena'),(null,'bijela','crna');
+
+insert into zarucnicasestra(sifra,zarucnica,sestra) values
+(null,1,1),(null,2,2),(null,3,3);
+
+insert into svekrva(sifra,asocijalno) values
+(null,null),(null,null),(null,null);
+
+insert into djevojka(sifra,modelnaocala,vesta,kratkamajica,suknja,bojaociju,prstena,svekrva) values
+(null,'plava','zelena','crna','zuta','bijela',3,1),
+(null,'crna','zuta','bijela','bijela','crna',49,2),
+(null,'zuta','plava','zelena','crna','zuta',6,3);
+
+insert into prijatelj(sifra) values
+(null),(null),(null);
+
+update decko set asocijalno='false';
+
+delete from prijatelj where asocijalno='false';
+
+select vesta from svekrva where not kuna=(8,12,20,28,35);
+
+
+
 
 
 
