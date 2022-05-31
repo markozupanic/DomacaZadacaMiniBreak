@@ -84,8 +84,38 @@ alter table sestra add foreign key (mladic) references mladic(sifra);
 
 alter table zarucnica add foreign key (sestra) references sestra(sifra);
 
+insert into djevojka(sifra,bojaociju,treciputa,carape) values
+(null,'zelena',2022-06-06,'crne',),(null,'crna',2020-06-06,'crvena',),
+(null,'plava',2021-06-06,'bijela',);
+
+insert into ostavljena(sifra,drugiputa,djevojka) values
+(null,2022-06-06,1),(null,2002-06-06,2),
+(null,2021-06-06,3);
+
+insert into prijatelj(sifra,ekstroventno,bojakose) values
+(null,null,'crna'),(null,null,'smeda'),(null,null,'crvena');
+
+insert into muskarac(sifra,nausnica,drugiputa,prstena) values
+(null,5,2022-06-06,8),(null,5,2002-06-06,4),(null,5,2021-06-06,1);
+
+insert into muskaracprijatelj(sifra,muskarac,prijatelj) values
+(null,1,1),(null,2,3),(null,3,2);
+
+insert into mladic(sifra,carape,hlace,drugiputa) values
+(null,'crne','zelene',2022-06-06),(null,'zuta','crvena',2002-06-06),
+(null,'zuta','plava',2020-06-06);
 
 
+insert into sestra(sifra,haljina) values
+(null,'zuta'),(null,'plava'),(null,'crna');
 
+insert into zarucnica(sifra,treciputa) values
+(null,2022-06-06),(null,2021-06-06),(null,2002-06-06);
+
+update ostavljena set drugiputa=2016-04-18;
+
+delete from zarucnica where treciputa=2015-04-18;
+
+select hlace from mladic where jmbag=null;
 
 
