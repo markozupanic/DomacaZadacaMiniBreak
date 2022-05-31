@@ -86,6 +86,35 @@ alter table cura add foreign key (ostavljen) references ostavljen(sifra);
 alter table prijateljica add foreign key (cura) references cura(sifra);
 
 
+insert into becar(sifra,asocijalno,kratkamajica) values
+(null,null,'zelena'),(null,null,'crvena'),(null,null,'crna');
+
+insert into brat(sifra,asocijalno,novcica,introvertno) values
+(null,null,16.9,null),(null,null,1.9,null),(null,null,6.9,null);
+
+insert into bratbecar(sifra,brat,becar) values
+(null,1,1),(null,2,3),(null,3,2);
+
+insert into ostavljen(sifra,novcica,brat) values
+(null,15.9,1),(null,5.9,2),(null,1.9,3);
+
+insert into cura(sifra,maraka,ostavljen) values
+(null,15.9,1),(null,1.9,1),(null,89.9,3);
+
+insert into prijateljica(sifra,maraka,modelnaocala) values
+(null,8.6,'suncane'),(null,18.6,'dioptrijske'),(null,1.6,'suncane');
+
+insert into prijatelj(sifra,carape) values
+(null,'zelene'),(null,'crne'),(null,'plave');
+
+insert into punica(sifra,gustoca) values
+(null,19.6),(null,1.6),(null,9.6);
+
+update punica set narukvica=11;
+
+delete from prijateljica where not haljina='%a%b%';
+
+select novcica from ostavljen where bojakose='%a%n%a%';
 
 
 
