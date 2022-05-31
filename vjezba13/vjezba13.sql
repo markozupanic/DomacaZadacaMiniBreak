@@ -90,5 +90,41 @@ alter table mladic add foreign key (ostavljen) references ostavljen(sifra);
 alter table cura add foreign key (mladic) references mladic (sifra);
 
 
+insert into muskarac(sifra,haljina,suknja,kuna) values
+(null,'zelena','plava',15.6),(null,'zuta','plava',5.6),
+(null,'crna','bijela',1.6);
+
+insert into neprijatelj(sifra,novcica,indiferentno,muskarac) values
+(null,15.9,null,1),(null,5.9,null,1),(null,1.9,null,1);
+
+insert into svekar(sifra,stilfrizura,gustoca,carape) values
+(null,'duga',15.6,'plave'),(null,'duga',1.6,'crne'),
+(null,'duga',5.6,'zute');
+
+insert into svekrva(sifra,ekstroventno) values
+(null,null),(null,null),(null,null);
+
+insert into svekrvasvekar(sifra,svekrva,svekar) values
+(null,1,1), (null,3,2), (null,2,3),;
+
+insert into ostavljen(sifra,asocijalno,svekrva) values
+(null,null,1),(null,null,2),(null,null,3);
+
+insert into mladic(sifra,drugiputa,carape,kratkamajica,introvertno,asocijalno) values
+(null,2022-06-06,'zelene','plava',null,null),
+(null,2021-06-06,'plava','zuta',null,null),
+(null,2020-06-06,'crna','crvena',null,null);
+
+insert into cura(sifra,vesta) values
+(null,'plava'),(null,'zuta'),(null,'crna');
+
+update neprijatelj set novcica=13.77;
+
+delete from cura where not hlace='%a%b%';
+
+select asocijalno from ostavljen where drugiputa=null;
+
+
+
 
 
