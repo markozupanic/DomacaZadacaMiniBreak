@@ -89,7 +89,41 @@ alter table ostavljen add foreign key (brat) references brat(sifra);
 alter table ostavljena add foreign key (ostavljen) references ostavljen(sifra);
 
 
+insert into mladic(sifra,drugiputa,bojaociju) values
+(null,2022-06-06,'plava'),(null,2012-06-06,'zuta'),
+(null,2020-06-06,'crna');
 
+insert into prijatelj(sifra,stilfrizura,modelnaocala,mladic) values
+(null,'duga','plava',1),(null,'celava','zuta',2),
+(null,'kratka','crna',3);
+
+insert into muskarac(sifra,ogrlica,vesta) values
+(null,3,'plava'),(null,10,'zuta'),(null,5,'crna');
+
+insert into neprijatelj(sifra,prstena,bojakose,ogrlica,stilfrizura) values
+(null,3,'plava',6,'duga'),(null,1,'zuta',9,'celava'),
+(null,2,'crna',16,'krtka');
+
+insert into neprijateljmuskarac(sifra,neprijatelj,muskarac) values
+(null,1,1),(null,2,2),(null,3,3);
+
+insert into brat(sifra,eura,gustoca,haljina,neprijatelj) values
+(null,15.6,18.9,'zuta',1),(null,1.6,8.9,'zelena',2),
+(null,5.6,1.9,'crna',3);
+
+insert into ostavljen(sifra,drugiputa,asocijalno,brat) values
+(null,2002-06-06,null,1),(null,2022-06-06,null,2),
+(null,2000-06-06,null,3);
+
+insert into ostavljena(sifra,kratkamajica,gustoca) values
+(null,'zelena',18.9),(null,'bijela',1.9),
+(null,'crna',8.9);
+
+update prijatelj set kratkamajica='Osijek';
+
+delete from ostavljena where hlace>'%a%b%';
+
+select kuna from brat where not gustoca=(6,10,16,25,36);
 
 
 
