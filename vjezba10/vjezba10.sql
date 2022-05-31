@@ -89,4 +89,38 @@ alter table zena add foreign key (mladic) references mladic(sifra);
 
 alter table sestra add foreign key (zarucnica) references zarucnica(sifra);
  
+insert into neprijatelj(sifra,gustoca,dukserica,stilfrizura) values
+(null,15.9,'plava','plava'),(null,29,6,'roza','crna'),
+(null,1,9,'zelena','plava');
+
+insert into punac(sifra,eura) values
+(null,15.8),(null,35.8),
+(null,5.8);
+
+insert into punacneprijatelj(sifra,punac,neprijatelj) values
+(null,1,1),(null,2,2),(null,3,3);
+
+insert into svekrva(sifra,introvertno) values
+(null,null),(null,null),(null,null);
+
+insert into mladic(sifra,hlace,stilfrizura,maraka) values
+(null,'plava','zelena',15.6),(null,'plava','roza',25.6),
+(null,'crna','zelena',5.6);
+
+
+insert into sestra(sifra,suknja,dukserica,prviputa) values
+(null,'plava','zelena',2020-06-06),(null,'zelena','crna',2010-06-06),
+(null,'crna','zelena',2000-06-06);
+
+
+insert into zena(sifra,bojaociju,maraka) values
+(null,'zelena',14.81),(null,'zelena',1.5),(null,'zelena',1.81);
+
+
+update zena set bojaociju='Osijek';
+
+delete from zena where not maraka=14.81;
+
+select kuna from svekrva where carape='%a%n%a%';
+
 
