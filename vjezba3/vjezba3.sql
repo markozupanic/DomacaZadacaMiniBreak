@@ -132,4 +132,24 @@ insert into punica (sifra,kratkamajica,kuna,vesta) values
 
 delete from punica where kratkamajica like '%a%b%';
 
-#select * from ostavljena where not lipa(9,10,20,30,35);
+select majica from ostavljena where not lipa(9,10,20,30,35);
+
+select a.ekstroventno ,b.vesta ,c.kuna ,d.lipa ,e.haljina 
+from brat as a inner join punica as b
+inner join snasa as c 
+inner join ostavljena as d 
+inner join prijatelj as e 
+where not d.lipa=91 and e.haljina like '%ba%'
+order by c.kuna DESC;
+
+select a.haljina, a.lipa 
+from prijatelj as a inner join prijateljbrat as b a.sifra=b.prijatelj
+where a.sifra not in (select sestra from prijateljbrat);
+
+
+
+
+
+
+
+
