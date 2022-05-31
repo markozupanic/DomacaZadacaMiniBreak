@@ -86,7 +86,40 @@ alter table mladic add foreign key (brat) references brat(sifra);
 alter table svekrva add foreign key (mladic) references mladic(sifra);
 
 
+insert into zarucnik(sifra,novcica,bojakose,kuna,prstena,kratkamajica,nausnica) values
+(null,1.3,'crna',19.6,6,'zuta',9),(null,19.3,'bijela',19.6,2,'crvena',1),
+(null,13.3,'zuta',19.6,19,'crna',19);
 
+insert into punac(sifra,treciputa) values
+(null,2022-06-06),(null,2012-06-06),
+(null,2002-06-06);
+
+insert into punaczarucnik(sifra,punac,zarucnik) values
+(null,1,1),(null,2,3),(null,3,2);
+
+insert into brat(sifra,vesta,majica,punac) values
+(null,'zelena','crna',1),(null,'plava','bijela',2),
+(null,'zuta','crvena',3);
+
+insert into mladic(sifra,treciputa,brat) values
+(null,2022-06-06,1),(null,2012-06-06,2),
+(null,2021-06-06,3);
+
+insert into svekrva(sifra,bojakose,drugiputa,mladic) values
+(null,'zuta',2022-06-06,1),(null,'crvena',2020-06-06,2),
+(null,'crna',2002-06-06,3);
+
+insert into prijatelj(sifra,asocijalno) values
+(null,null),(null,null),(null,null);
+
+insert into zena(sifra,nausnica,modelnaocala) values
+(null,3,'zelena'),(null,47,'zuta'),(null,2,'plava');
+
+update zena set lipa=13.77;
+
+delete from svekrva where not ogrlica=18;
+
+select prstena from brat where dukserica='%a%n%a%';
 
 
 
