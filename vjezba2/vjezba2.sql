@@ -129,4 +129,17 @@ update prijatelj set treciput=2020-04-30;
 #select suknja from cura where drugiput=null;
 
 
+select a.novcica, b.neprijatelj, c.haljina ,d,drugiputa ,e.vesta
+    from zarucnica as a inner join brat as b
+    inner join neprijatelj as c 
+    inner join cura as d 
+    inner join decko as e
+where d.cura and e.decko like '%ba%'
+order by c.neprijatelj DESC;
+
+select a.vesta ,a.asocijalno 
+from decko as a inner join deckozarucnica as b on a.sifra=b.decko
+where a.sifra not in (select decko from deckozarucnica)
+
+
 
