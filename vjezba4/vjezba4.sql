@@ -132,3 +132,15 @@ insert into prijatelj(sifra,prstena,jmbag,suknja,becar) values
 delete from prijatelj where prstena>17;
 
 select haljina from snasa where treciputa=null;
+
+
+select a.nausnica ,b.jmbag ,c.kratkamajica ,d.treciput ,e.lipa
+from mladic as a inner join prijatelj as b
+inner join becar as c 
+inner join snasa as d
+inner join zena as e
+where d.treciputa and where not e.lipa=29;
+
+select a.lipa ,a.prstena 
+from zena as a inner join zenamladic as b on a.sifra=b.zena
+where a.sifra not in (select zena from zenamladic);
