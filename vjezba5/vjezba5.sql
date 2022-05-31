@@ -124,3 +124,4 @@ delete from ostavljena where ogrlica=17;
 
 select majica from punac where prviput=null;
 
+

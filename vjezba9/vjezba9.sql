@@ -88,3 +88,31 @@ alter table zarucnik add foreign key (brat) references brat(sifra);
 alter table snasa add foreign key (ostavljena) references ostavljena(sifra);
 
 
+insert into prijateljica (sifra,kuna) values
+(null,15.8),(null,5.8),(null,78.6);
+
+insert into punac(sifra,narukvica) values
+(null,6),(null,25),(null,1);
+
+insert into punacprijateljica(sifra,punac,prijateljica) values
+(null,1,3),(null,2,1),(null,3,2);
+
+
+insert into cura(sifra,vesta,suknja,punac) values
+(null,'plava' ,'zelena',1),(null,'crvena' ,'zuta',2),
+(null,'crna' ,'plava',3);
+
+insert into brat(sifra,novcica,vesta) values
+(null,15.6,'plava'),(null,26.7,'zelena'),(null,1.5,'zuta');
+
+insert into snasa (sifra,drugiputa,haljina) values
+(null,2022-06-06,'zelena'),(null,2002-06-06,'crna'),
+(null,2020-07-06,'plava');
+
+update snasa set drugiputa=2020-04-24;
+
+delete from zarucnik where haljina='%a%b%';
+
+select carape from cura where ekstroventno=null;
+
+

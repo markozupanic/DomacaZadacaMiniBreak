@@ -117,3 +117,5 @@ update cura set indiferentno='false';
 
 delete from brat where not novcica=12.75;
 
+select prviputa from becar where treciputa=null;
+
