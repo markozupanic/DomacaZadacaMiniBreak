@@ -125,3 +125,15 @@ delete from ostavljena where ogrlica=17;
 select majica from punac where prviput=null;
 
 
+
+select a.asocijalno ,b.stilfrizura ,c.nausnica ,d.prviputa ,e.majica
+from cura as a inner join ostavljena as b
+inner join punica as c 
+inner join punac as d 
+inner join svekar as e
+where d.prviputa and where svekar='%ab%';
+
+
+select a.majica ,a.carape 
+from svekar as a inner join svekarcura as b on a.sifra=b.svekar
+where a.sifra not in (select svekar from svekarcura);
