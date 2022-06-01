@@ -126,6 +126,21 @@ delete from ostavljena where hlace>'%a%b%';
 select kuna from brat where not gustoca=(6,10,16,25,36);
 
 
+select a.vesta ,b.dukserica ,c.drugiputa ,d.gustoca ,e.gustoca
+from muskarac as a inner join ostavljena as b 
+inner join ostavljen as c 
+inner join brat as d 
+inner join neprijatelj as e 
+where d.gustoca>100 and where not e.gustoca=22
+order by c.drugiputa DESC;
+
+select a.gustoca ,a.bojakose
+from neprijatelj as a inner join neprijateljmuskarac as b on a.sifra=b.neprijatelj
+where a.sifra not in (select neprijatelj from neprijateljmuskarac);
+
+
+
+
 
 
 
