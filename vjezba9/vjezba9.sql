@@ -115,15 +115,15 @@ delete from zarucnik where haljina='%a%b%';
 
 select carape from cura where ekstroventno=null;
 
-select a.maraka ,b.indiferentno ,c.lipa ,d.carape ,e.eura
-from neprijatelj as a inner join zena as b 
-inner join mladic as c 
-inner join svekrva as d 
+select a.kuna ,b.nausnica ,c.ekstroventno ,d.ekstroventno ,e.modelnaocala
+from prijatelj as a inner join zarucnik as b 
+inner join brat as c 
+inner join cura as d 
 inner join punac as e 
-where d.carape='%a%' and where not eura=22
-order by c.lipa DESC;
+where d.ekstroventno and where e.modelnaocala='%ba%'
+order by c.ekstroventno DESC;
 
-select a.eura, a.stilfrizura 
+select a.modelnaocala, a.kuna 
 from punac as a inner join punacprijateljica as b on a.sifra=b.punac
 where a.sifra not in (select punac from punacprijateljica);
 
