@@ -121,6 +121,18 @@ delete from svekrva where not ogrlica=18;
 
 select prstena from brat where dukserica='%a%n%a%';
 
+select a.kuna,b.drugiputa,c.lipa,d.dukserica,e.bojakose
+from zarucnica as a inner join svekrva as b 
+inner join mladic as c 
+inner join brat as d 
+inner join punac as e
+where d.dukserica='%a%' and where e.bojakose='%ba%'
+order by c.lipa DESC;
+
+select a.bojakose,a.novcica
+from punac as a inner join punaczarucnik as b on a.sifra=b.punac
+where a.sifra not in (select punac from punaczarucnik);
+
 
 
 
