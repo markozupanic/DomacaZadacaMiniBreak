@@ -119,7 +119,17 @@ delete from prijatelj where asocijalno='false';
 
 select vesta from svekrva where not kuna=(8,12,20,28,35);
 
+select a.kratkamajica ,b.kuna ,c.vesta ,d.kuna , e.kratkamajica
+from sestra as a inner join prijatelj as b
+inner join djevojka as c 
+inner join svekrva as d 
+inner join zarucnica as e 
+where d.kuna>87 and where e.kratkamajica='%ba%'
+order by c.vesta DESC;
 
+select a.kratkamajica ,a.jmbag 
+from zarucnica as a inner join zarucnicasestra as b on a.sifra=b.zarucnica
+where a.sifra not in (select zarucnica from zarucnicasestra);
 
 
 
