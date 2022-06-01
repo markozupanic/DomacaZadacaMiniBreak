@@ -116,6 +116,20 @@ delete from prijateljica where not haljina='%a%b%';
 
 select novcica from ostavljen where bojakose='%a%n%a%';
 
+select a.vesta,b.modelnaocala,c.kuna,d.bojakose,e.dukserica
+from becar as a inner join prijatelj as b 
+inner join cura as c 
+inner join ostavljen as d 
+inner join brat as e 
+where d.bojakose='%a%' and e.dukserica='%b%a%'
+order by c.kuna DESC;
+
+select a.dukserica,a.novcica 
+from brat as a inner join bratbecar as b on a.sifra=b.brat
+where a.sifra not in (select brat from bratbecar);
+
+
+
 
 
 
