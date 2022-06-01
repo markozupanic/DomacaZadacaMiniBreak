@@ -118,7 +118,17 @@ delete from decko where bojakose='%a%b%';
 
 select modelnaocala from zarucnica where bojakose='%a%n%a%';
 
+select a.ogrlica,b.prijatelj.c.vesta,d.bojaociju,e.jmbag
+from ostavljena as a inner join decko as b 
+inner join prijatelj as c 
+inner join zarucnica as d 
+inner join zarucnik as e 
+where d.bojakose and e.jmbag
+order by c.vesta DESC;
 
+select a.jmbag,a.dukserica
+from zarucnik as a inner join zarucnikostavljena as b on a.sifra=b.zarucnik
+where a.sifra not in (select zarucnik from zarucnikostavljena);
 
 
 

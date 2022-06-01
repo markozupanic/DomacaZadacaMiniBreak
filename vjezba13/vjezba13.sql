@@ -131,7 +131,7 @@ inner join mladic as c
 inner join ostavljen as d 
 inner join svekrva as e 
 where d.drugiputa and e.ogrlica=193
-oredr by c.carape DESC;
+order  by c.carape DESC;
 
 select a.ogrlica ,a.ekstroventno 
 from svekrva as a inner join svekrvasvekar as b on a.sifra=b.svekrva
