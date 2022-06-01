@@ -125,6 +125,18 @@ delete from cura where not hlace='%a%b%';
 select asocijalno from ostavljen where drugiputa=null;
 
 
+select a.gustoca ,b.majica ,c.carape ,d.drugiputa ,e.ogrlica
+from svekar as a inner join cura as b 
+inner join mladic as c 
+inner join ostavljen as d 
+inner join svekrva as e 
+where d.drugiputa and e.ogrlica=193
+oredr by c.carape DESC;
+
+select a.ogrlica ,a.ekstroventno 
+from svekrva as a inner join svekrvasvekar as b on a.sifra=b.svekrva
+where a.sifra not in (select svekrva from svekrvasvekar);
+
 
 
 
