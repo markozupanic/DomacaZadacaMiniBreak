@@ -139,7 +139,8 @@ from mladic as a inner join prijatelj as b
 inner join becar as c 
 inner join snasa as d
 inner join zena as e
-where d.treciputa and where not e.lipa=29;
+where d.treciputa and where not e.lipa=29
+order by c.kratkamajica DESC;
 
 select a.lipa ,a.prstena 
 from zena as a inner join zenamladic as b on a.sifra=b.zena

@@ -117,3 +117,17 @@ update svekrva set suknja='Osijek';
 delete from decko where modelnaocala<'AB';
 
 select narukvica from brat where treciputa=null;
+
+select a.drugiputa ,b.zena ,c.narukvica ,d.treciput ,e.prstena
+from ostavljena as a inner join decko as b 
+inner join zena as c 
+inner join brat as d 
+inner join prijatelj as e
+where d.treciputa and e.prstena=219
+order by c.narukvica DESC;
+
+select a.prstena ,a.introvertno 
+from prijatelj as a inner join prijateljostavljena as b on a.sifra=b.prijatelj
+where a.sifra not in (select prijatelj from prijateljostavljena);
+
+

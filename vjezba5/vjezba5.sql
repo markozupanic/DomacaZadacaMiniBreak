@@ -131,7 +131,8 @@ from cura as a inner join ostavljena as b
 inner join punica as c 
 inner join punac as d 
 inner join svekar as e
-where d.prviputa and where svekar='%ab%';
+where d.prviputa and where svekar='%ab%'
+order by c.nausnica DESC;
 
 
 select a.majica ,a.carape 
