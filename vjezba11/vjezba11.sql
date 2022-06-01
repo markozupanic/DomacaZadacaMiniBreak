@@ -122,6 +122,17 @@ delete from punica where drugiputa=2019-04-08;
 
 select haljina from svekrva where carape='%a%n%a%';
 
+select a.drugiputa ,b.haljina ,c.prstena ,d.carape ,e.kuna
+from mladic as a inner join punica as b 
+inner join djevojka as  c 
+inner join svekrva as d 
+inner join punac as e 
+where d.carape='%a%' and where not e.kuna=21
+order by c.prstena DESC;
+
+select a.kuna ,a.vesta
+from punac as a inner join punacmladic as b on a.sifra=b.punac
+where a.sifra not in (select punac from from punacmladic);
 
 
 
