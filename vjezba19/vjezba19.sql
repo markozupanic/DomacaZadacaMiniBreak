@@ -87,5 +87,43 @@ alter table muskarac add foreign key (svekrva) references svekrva(sifra);
 
 
 
+insert into ostavljena(sifra,ekstroventno,eura) values
+(null,null,15.6),(null,null,1.6),(null,null,5.6);
 
+insert into punica(sifra,stilfrizura,maraka,jmbag) values
+(null,'krtka',18.9,12345678901),(null,'duga',18.9,12345672901),
+(null,'krtka',18.9,12345678911);
 
+insert into punicaostavljena(sifra,punica,ostavljena) values
+(null,1,1),(null,2,3),(null,3,2);
+
+insert into punac (sifra,punica) values
+(null,1),(null,2),(null,3);
+
+insert into svekrva(sifra,gustoca,stilfrizura,punac) values
+(null,15.9,'duga',1),(null,5.9,'kratka',2),(null,1.9,'duga',3);
+
+insert into muskarac(sifra,drugiputa,ogrlica) values
+(null,2022-06-06,3),(null,2021-06-06,12),(null,2002-06-06,8);
+
+insert into svekar(sifra,nausnica,indiferentno,suknja,kuna) values
+(null,3,null,'plava',17.9),(null,18,null,'bijela',7.9),
+(null,6,null,'crna',1.9);
+
+update svekar set indiferentno='false';
+
+delete from muskarac where gustoca=14.92;
+
+select ekstroventno from punac where treciputa=null:
+
+select a.narukvica,b.ogrlica,c.carape,d.treciputa,e.maraka
+from ostavljen as a inner join muskarac as b 
+inner join svekrva as c 
+inner join punac as d 
+inner join punica as e 
+where d.treciputa and where not e.maraka=21
+order by c.carape DESC;
+
+select a.maraka,a.jmbag 
+from punica as a inner join punicaostavljena as b on a.sifra=b.punica
+where a.sifra not in (select punica from punicaostavljena);
