@@ -118,4 +118,18 @@ delete from zarucnica where treciputa=2015-04-18;
 
 select hlace from mladic where jmbag=null;
 
+select a.bojakose,b.sestra,c.indiferentno,d.jmbag,e.nausnica
+from prijatelj as a inner join zarucnica as b 
+inner join sestra as c 
+inner join mladic as d 
+inner join muskarac as e 
+where d.jmbag and e.nausnica=213
+order by c.indiferentno DESC;
+
+select a.nausnica,a.drugiputa 
+from muskarac as a inner join muskaracprijatelj as b on a.sifra=b.muskarac
+where a.sifra not in (select muskarac from muskaracprijatelj);
+
+
+
 
