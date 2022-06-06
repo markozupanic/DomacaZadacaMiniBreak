@@ -117,7 +117,7 @@ update decko set asocijalno='false';
 
 delete from prijatelj where asocijalno='false';
 
-select vesta from svekrva where not kuna=(8,12,20,28,35);
+#select vesta from svekrva where not kuna=8,12,20,28,35;
 
 select a.kratkamajica ,b.kuna ,c.vesta ,d.kuna , e.kratkamajica
 from sestra as a inner join prijatelj as b

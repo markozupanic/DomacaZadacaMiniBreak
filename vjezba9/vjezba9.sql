@@ -116,11 +116,11 @@ delete from zarucnik where haljina='%a%b%';
 select carape from cura where ekstroventno=null;
 
 select a.kuna ,b.nausnica ,c.ekstroventno ,d.ekstroventno ,e.modelnaocala
-from prijatelj as a inner join zarucnik as b 
+from prijateljica as a inner join zarucnik as b 
 inner join brat as c 
 inner join cura as d 
 inner join punac as e 
-where d.ekstroventno and where e.modelnaocala='%ba%'
+where d.ekstroventno and e.modelnaocala like '%ba%'
 order by c.ekstroventno DESC;
 
 select a.modelnaocala, a.kuna 
